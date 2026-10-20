@@ -1,0 +1,34 @@
+{
+  "fabric:load_conditions": [
+    { "condition": "fabric:all_mods_loaded", "values": ["create"] }
+  ],
+  "neoforge:conditions": [
+    { "type": "neoforge:mod_loaded", "modid": "create" }
+  ],
+  "type": "create:crushing",
+  "ingredient": "minecraft:soul_sand",
+  "processing_time": 150,
+  "results": [
+    {
+		"count":1,
+	
+      "id": "minecraft:glowstone_dust"
+    },
+    {
+      "chance": 0.1,
+      "count": 1,
+      "id": "minecraft:quartz"
+    },
+    {
+      "chance": 0.5,
+      "count": 1,
+      "id": "minecraft:glowstone_dust"
+    },
+    {
+      "chance": 0.01,
+      "count": 1,
+      "id": "minecraft:netherite_scrap"
+    }
+	
+  ]
+}

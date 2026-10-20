@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "X": "minecraft:iron_chain"
+  },
+  "pattern": [
+    "X X",
+    "XXX",
+	"XXX"
+
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:chainmail_chestplate"
+  }
+}

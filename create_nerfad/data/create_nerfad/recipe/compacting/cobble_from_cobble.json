@@ -1,0 +1,29 @@
+{
+  "fabric:load_conditions": [
+    { "condition": "fabric:all_mods_loaded", "values": ["create"] }
+  ],
+  "neoforge:conditions": [
+    { "type": "neoforge:mod_loaded", "modid": "create" }
+  ],
+  "type": "create:compacting",
+  "heat_requirement": "heated",  
+  "ingredients": ["minecraft:cobblestone"],
+  "fluid_ingredients":[ 
+  {
+    "type": "fluid_stack",
+    "amount": 16200,
+    "fluid": "minecraft:lava"
+  },
+  {
+    "type": "fluid_stack",
+    "amount": 20250,
+    "fluid": "minecraft:water"
+  }],
+  
+  "results":[ 
+	{
+		"count": 64,
+		"id": "minecraft:cobblestone"
+	}
+  ]
+}

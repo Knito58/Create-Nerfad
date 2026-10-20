@@ -1,0 +1,12 @@
+modLoader = "javafml"
+loaderVersion = "[1,)"
+license = "MIT"
+showAsResourcePack = false
+
+[[mods]]
+modId = "create_nerfad"
+version = "1.2.9"
+logoFile = "icon.png"
+displayName = "Not Enough Resources For A Dummy"
+description = "Adding some recipes for the Create mod"
+credits = "Created with Notepad++, 7zip and Google AI hints"

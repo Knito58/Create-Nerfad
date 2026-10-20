@@ -1,0 +1,28 @@
+{
+  "type": "create:crushing",
+  "ingredient": "minecraft:blue_concrete",
+  "processing_time": 150,
+  "results": [
+    {
+		"count": 4,
+	
+      "id": "minecraft:lapis_lazuli"
+    },
+    {
+      "chance": 0.5,
+      "count": 2,
+      "id": "minecraft:lapis_lazuli"
+    },
+    {
+      "chance": 0.5,
+      "count": 1,
+      "id": "minecraft:lapis_lazuli"
+    },
+    {
+      "chance": 0.01,
+      "count": 1,
+      "id": "minecraft:diamond"
+    }
+	
+  ]
+}

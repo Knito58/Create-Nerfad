@@ -1,0 +1,29 @@
+{
+  "fabric:load_conditions": [
+    { "condition": "fabric:all_mods_loaded", "values": ["create"] }
+  ],
+  "neoforge:conditions": [
+    { "type": "neoforge:mod_loaded", "modid": "create" }
+  ],
+  "type": "create:compacting",
+
+  "ingredients": [
+  
+  "minecraft:copper_nugget","minecraft:copper_nugget",
+  "minecraft:gravel"
+],
+  "fluid_ingredients":[ 
+
+  {
+    "type": "fluid_stack",
+    "amount": 20250,
+    "fluid": "minecraft:water"
+  }],
+  
+  "results":[ 
+	{
+		"count": 4,
+		"id": "create:veridium"
+	}
+  ]
+}
