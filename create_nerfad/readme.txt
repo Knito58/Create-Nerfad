@@ -1,6 +1,6 @@
 Create Nerfad
 Create: Not Enough Recipes For A Dummy
-For Minecraft 26.2 and 26.3 with Create Fly (tested with the GitHub build on 26.3)
+For Minecraft 26.2 and 26.3 with Create Fly or Create Fly Fly (tested with the Create Fly Fly GitHub build on 26.3)
 
 Konitor
 2026-02-04
