@@ -5,8 +5,15 @@ showAsResourcePack = false
 
 [[mods]]
 modId = "create_nerfad"
-version = "1.2.9"
+version = "1.2.10"
 logoFile = "icon.png"
-displayName = "Not Enough Resources For A Dummy"
+displayName = "Create: Not Enough Recipes For A Dummy"
 description = "Adding some recipes for the Create mod"
-credits = "Created with Notepad++, 7zip and Google AI hints"
+credits = "Made by Claude AI, which writes the recipes and the metadata. Konitor tests in game and decides what goes in."
+
+[[dependencies.create_nerfad]]
+modId = "minecraft"
+type = "required"
+versionRange = "[26.2,26.4)"
+ordering = "NONE"
+side = "BOTH"

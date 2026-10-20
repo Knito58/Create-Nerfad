@@ -1,13 +1,17 @@
 Create Nerfad
-Create: Not Enough Resources For A Dummy
-For Create Fly 6.0.9 build 5 for 1.21.11
+Create: Not Enough Recipes For A Dummy
+For Minecraft 26.2 and 26.3 with Create Fly (tested with the GitHub build on 26.3)
 
 Konitor
 2026-02-04
 https://discord.gg/pFPRhpeSDr
 
-Made initially with Notepad++ and 7zip on a Windows 11 Computer and Google AI telling me what to do.
-Now continued with Xed and Archive Manager on a Ubuntu Linux Mint Computer and Claude AI telling me what to do.
+Claude AI does the heavy lifting: it writes the recipes, the metadata and this readme.
+I test in game on Linux Mint (Xed, Archive Manager) and decide what goes in.
+The first versions were made with Notepad++, 7zip and hints from Google AI.
+
+Version 1.2.10: Only for Minecraft 26.2 and 26.3 now (older versions on request). One name everywhere:
+"Create: Not Enough Recipes For A Dummy". Credits now say that Claude AI does the work.
 
 Version 1.2.9: Prism Launcher now shows the mod icon (logoFile added to the Forge/NeoForge metadata).
 
