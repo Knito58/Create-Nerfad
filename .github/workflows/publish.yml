@@ -65,8 +65,8 @@ jobs:
           [ -n "$FABRIC" ] || { echo "No CurseForge id for Fabric"; exit 1; }
           # Environment (Client/Server) is optional; skip it if CurseForge has no such ids
           ENV=$(jq -cn --arg c "$CLIENT" --arg s "$SERVER" '[$c, $s] | map(select(. != "") | tonumber)')
-          GV=$(for MC in 26.2 26.3; do id_of "$MC" '^minecraft-'; done | jq -s -c .)
-          [ "$(echo "$GV" | jq length)" = 2 ] || { echo "No CurseForge ids for Minecraft 26.2/26.3"; exit 1; }
+          GV=$(for MC in 26.1.2 26.2 26.3; do id_of "$MC" '^minecraft-'; done | jq -s -c .)
+          [ "$(echo "$GV" | jq length)" = 3 ] || { echo "No CurseForge ids for Minecraft 26.1.2/26.2/26.3"; exit 1; }
           META=$(jq -n --rawfile log changelog.md --arg name "Create: Nerfad $VERSION" \
             --arg type "$RELEASE_TYPE" --argjson gv "$GV" --argjson fabric "$FABRIC" \
             --argjson env "$ENV" '{

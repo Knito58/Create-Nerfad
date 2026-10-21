@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "create_nerfad",
-  "version": "1.2.11",
+  "version": "1.2.12",
   "name": "Create: Nerfad – Not Enough Recipes For A Dummy",
   "description": "Mixing, blasting, smoking, crushing, haunting and compacting recipes for Create Fly and Create Fly Fly.",
   "authors": ["Konitor"],
@@ -13,7 +13,7 @@
   "icon": "icon.png",
   "environment": "*",
   "depends": {
-    "minecraft": ["~26.2", "~26.3"],
+    "minecraft": ["~26.1.2", "~26.2", "~26.3"],
     "fabric-api": "*"
   }
 }

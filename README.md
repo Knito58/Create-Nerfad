@@ -1,9 +1,9 @@
 # Create: Nerfad
 
-**Create: Not Enough Recipes For A Dummy**
+**Create: Nerfad – Not Enough Recipes For A Dummy**
 
 Extra recipes for Create Fly and Create Fly Fly (mixing, compacting, crushing, haunting, smoking)
-plus a few vanilla crafting recipes, for Minecraft 26.2 and 26.3. Works on Fabric, Forge and NeoForge.
+plus a few vanilla crafting recipes, for Minecraft 26.1.2, 26.2 and 26.3. Fabric only (the fluid amounts are in Fabric units).
 
 - `create_nerfad/` holds the mod's files exactly as they go into the jar.
 - `art/` holds the icon sources (GIMP).

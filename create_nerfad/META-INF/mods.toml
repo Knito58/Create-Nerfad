@@ -4,7 +4,7 @@ license="MIT"
 
 [[mods]]
 modId="create_nerfad"
-version="1.2.11"
+version="1.2.12"
 logoFile="icon.png"
 displayName="Create: Nerfad – Not Enough Recipes For A Dummy"
 description="Adding some recipes for the Create mod"
@@ -13,6 +13,6 @@ credits="Made by Claude AI, which writes the recipes and the metadata. Konitor t
 [[dependencies.create_nerfad]]
 modId="minecraft"
 mandatory=true
-versionRange="[26.2,26.4)"
+versionRange="[26.1.2,26.4)"
 ordering="NONE"
 side="BOTH"
