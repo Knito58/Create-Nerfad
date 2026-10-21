@@ -16,4 +16,10 @@ cd create_nerfad && zip -r ../create_nerfad-1-2-10.jar . -x todo-after-fly-updat
 ```
 
 The changelog is in [create_nerfad/readme.txt](create_nerfad/readme.txt).
-Claude AI does the work; Konitor tests and decides. The first versions had hints from Google AI.
+
+## How this mod is made
+
+This mod is written by Claude AI: the recipes, the metadata and the descriptions.
+Konitor decides what goes in and tests every version in game.
+The first versions were made with hints from Google AI.
+The icon is hand-made by Konitor in GIMP; no images are AI-generated.
