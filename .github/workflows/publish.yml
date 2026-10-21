@@ -1,0 +1,88 @@
+# Builds the jar and uploads it to CurseForge and GitHub Releases.
+# Start it by hand: Actions tab -> Publish -> Run workflow.
+# Needs the repository secret CURSEFORGE_TOKEN (CurseForge author API token).
+name: Publish
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_type:
+        description: CurseForge release type
+        type: choice
+        options: [release, beta, alpha]
+        default: release
+      curseforge:
+        description: Upload to CurseForge
+        type: boolean
+        default: true
+      github_release:
+        description: Create the GitHub release
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+env:
+  CURSEFORGE_PROJECT_ID: "1757335"  # Create: Nerfad
+  CF_API: https://minecraft.curseforge.com/api
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build
+        run: |
+          sh build.sh
+          VERSION=$(sed -n 's/.*"version": *"\([^"]*\)".*/\1/p' create_nerfad/fabric.mod.json)
+          echo "VERSION=$VERSION" >> "$GITHUB_ENV"
+          echo "JAR=$(ls build/*.jar)" >> "$GITHUB_ENV"
+          # The "Version x.y.z:" paragraph of create_nerfad/readme.txt
+          awk -v v="Version $VERSION:" 'index($0,v)==1{on=1; sub(v" *","")} on&&/^$/{exit} on' create_nerfad/readme.txt > changelog.md
+          [ -s changelog.md ] || { echo "No changelog entry for $VERSION in readme.txt"; exit 1; }
+          cat changelog.md
+
+      - name: Upload to CurseForge
+        if: inputs.curseforge
+        env:
+          CF_TOKEN: ${{ secrets.CURSEFORGE_TOKEN }}
+          RELEASE_TYPE: ${{ inputs.release_type }}
+        run: |
+          curl -sSf -H "X-Api-Token: $CF_TOKEN" "$CF_API/game/version-types" > types.json
+          curl -sSf -H "X-Api-Token: $CF_TOKEN" "$CF_API/game/versions" > versions.json
+          # CurseForge wants its own ids for game versions and loaders
+          id_of() {
+            jq -r --arg name "$1" --arg type "$2" '
+              ([input[] | select(.slug | test($type)) | .id]) as $types
+              | [.[] | select(.name == $name and (.gameVersionTypeID as $t | $types | index($t)))][0].id // empty
+            ' versions.json types.json
+          }
+          FABRIC=$(id_of Fabric '^modloader$')
+          CLIENT=$(id_of Client '^environment$')
+          SERVER=$(id_of Server '^environment$')
+          [ -n "$FABRIC" ] || { echo "No CurseForge id for Fabric"; exit 1; }
+          # Environment (Client/Server) is optional; skip it if CurseForge has no such ids
+          ENV=$(jq -cn --arg c "$CLIENT" --arg s "$SERVER" '[$c, $s] | map(select(. != "") | tonumber)')
+          GV=$(for MC in 26.2 26.3; do id_of "$MC" '^minecraft-'; done | jq -s -c .)
+          [ "$(echo "$GV" | jq length)" = 2 ] || { echo "No CurseForge ids for Minecraft 26.2/26.3"; exit 1; }
+          META=$(jq -n --rawfile log changelog.md --arg name "Create: Nerfad $VERSION" \
+            --arg type "$RELEASE_TYPE" --argjson gv "$GV" --argjson fabric "$FABRIC" \
+            --argjson env "$ENV" '{
+              changelog: $log, changelogType: "text", displayName: $name,
+              gameVersions: ($gv + [$fabric] + $env), releaseType: $type,
+              relations: {projects: [{slug: "fabric-api", type: "requiredDependency"}]}
+            }')
+          echo "Uploading $JAR"
+          curl -sS --fail-with-body -H "X-Api-Token: $CF_TOKEN" --form-string "metadata=$META" -F "file=@$JAR" \
+            "$CF_API/projects/$CURSEFORGE_PROJECT_ID/upload-file"
+          echo
+
+      - name: GitHub release
+        if: inputs.github_release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "v$VERSION" "$JAR" \
+            --title "Create: Nerfad $VERSION" --notes-file changelog.md --target "$GITHUB_SHA"

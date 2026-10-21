@@ -1,5 +1,4 @@
-Create: Nerfad
-Create: Not Enough Recipes For A Dummy
+Create: Nerfad – Not Enough Recipes For A Dummy
 For Minecraft 26.2 and 26.3 with Create Fly or Create Fly Fly (tested with the Create Fly Fly GitHub build on 26.3)
 
 Konitor
@@ -9,6 +8,9 @@ https://discord.gg/pFPRhpeSDr
 Claude AI does the heavy lifting: it writes the recipes, the metadata and this readme.
 I test in game on Linux Mint (Xed, Archive Manager) and decide what goes in.
 The first versions were made with Notepad++, 7zip and hints from Google AI.
+
+Version 1.2.11: Fabric API is now listed as required (Fabric needs it to load the recipes).
+Name is now "Create: Nerfad – Not Enough Recipes For A Dummy" everywhere.
 
 Version 1.2.10: Only for Minecraft 26.2 and 26.3 now (older versions on request). One name everywhere:
 "Create: Not Enough Recipes For A Dummy". Credits now say that Claude AI does the work.
