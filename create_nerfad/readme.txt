@@ -1,4 +1,4 @@
-Create Nerfad
+Create: Nerfad
 Create: Not Enough Recipes For A Dummy
 For Minecraft 26.2 and 26.3 with Create Fly or Create Fly Fly (tested with the Create Fly Fly GitHub build on 26.3)
 
@@ -50,7 +50,7 @@ Version 1.1.0:
 My prediction was half right: A Create Fly update made some recipes from nerfad stop to work. But supplying a blaze burner would not help.
 Create Fly update -> all mixing and compacting recipes had to be changed to work again.
 
-Create Nerfad Recipes:
+Create: Nerfad recipes:
 
 Compacting:
 

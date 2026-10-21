@@ -1,4 +1,7 @@
-# Create: Not Enough Recipes For A Dummy (Nerfad)
+# Create: Nerfad
+
+**Create: Not Enough Recipes For A Dummy**
+
 
 Extra recipes for Create Fly and Create Fly Fly (mixing, compacting, crushing, haunting, smoking)
 plus a few vanilla crafting recipes, for Minecraft 26.2 and 26.3. Works on Fabric, Forge and NeoForge.
