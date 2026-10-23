@@ -6,7 +6,7 @@ Extra recipes for Create Fly and Create Fly Fly (mixing, compacting, crushing, h
 plus a few vanilla crafting recipes, for Minecraft 26.1.2, 26.2 and 26.3. Fabric only (the fluid amounts are in Fabric units).
 
 - `create_nerfad/` holds the mod's files exactly as they go into the jar.
-- `art/` holds the icon sources (GIMP).
+- `art/` holds the icon sources (GIMP) and `add_ring.py`, which makes the ringed icons (white ring, transparent outside) from `new_nerfad_icon2.png`.
 - `removed/` holds recipes that were taken out of the mod.
 
 Build the jar with `./build.sh` (needs `zip`); it lands in `build/`.
@@ -19,4 +19,3 @@ The changelog is in [create_nerfad/readme.txt](create_nerfad/readme.txt).
 This mod is written by Claude AI: the recipes, the metadata and the descriptions.
 Konitor decides what goes in and tests every version in game.
 The first versions were made with hints from Google AI.
-The icon is hand-made by Konitor in GIMP; no images are AI-generated.
