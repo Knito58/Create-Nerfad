@@ -19,4 +19,3 @@ The changelog is in [create_nerfad/readme.txt](create_nerfad/readme.txt).
 This mod is written by Claude AI: the recipes, the metadata and the descriptions.
 Konitor decides what goes in and tests every version in game.
 The first versions were made with hints from Google AI.
-The icon is hand-made by Konitor in GIMP; no images are AI-generated. Claude only added the white ring and the transparent outside with `art/add_ring.py`.
