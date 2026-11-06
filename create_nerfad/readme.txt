@@ -9,6 +9,8 @@ Claude AI does the heavy lifting: it writes the recipes, the metadata and this r
 I test in game on Linux Mint (Xed, Archive Manager) and decide what goes in.
 The first versions were made with Notepad++, 7zip and hints from Google AI.
 
+Version 1.2.13: The recipes for Asurine, Veridium, Tuff, Lapis (from blue concrete) and Diamond (from coal blocks) are switched off automatically when Create: Ore Excavation Fly is installed. The Crimsite (iron) recipe stays.
+
 Version 1.2.12: Minecraft 26.1.2 is supported again (for the Villager Wake modpack).
 
 Version 1.2.11: Fabric API is now listed as required (Fabric needs it to load the recipes).
