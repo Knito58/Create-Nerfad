@@ -1,9 +1,11 @@
 {
   "fabric:load_conditions": [
-    { "condition": "fabric:all_mods_loaded", "values": ["create"] }
+    { "condition": "fabric:all_mods_loaded", "values": ["create"] },
+    { "condition": "fabric:not", "value": { "condition": "fabric:all_mods_loaded", "values": ["oreexcavationfly"] } }
   ],
   "neoforge:conditions": [
-    { "type": "neoforge:mod_loaded", "modid": "create" }
+    { "type": "neoforge:mod_loaded", "modid": "create" },
+    { "type": "neoforge:not", "value": { "type": "neoforge:mod_loaded", "modid": "oreexcavationfly" } }
   ],
   "type": "create:compacting",
   "heat_requirement": "heated",  
